@@ -6,8 +6,8 @@ import {FlatList, Image, Pressable, ScrollView, StyleSheet, TouchableOpacity} fr
 import * as SecureStore from 'expo-secure-store';
 import * as MediaLibrary from 'expo-media-library';
 import React from "react";
-import BottomSheet from 'reanimated-bottom-sheet';
-
+import { BottomSheet} from 'react-native-elements';
+import { Button } from '@rneui/base';
 
 export default function List ({pictures, setPictures}){
     const STORAGE=useFetchStore();
@@ -28,7 +28,7 @@ export default function List ({pictures, setPictures}){
     const saveInPhone = (uri:string)=>{
         MediaLibrary.saveToLibraryAsync(uri)
     }
-
+  
     const trashPicture = (uri:string) => {
         Alert.alert(
             "Alert Title",
@@ -65,10 +65,7 @@ export default function List ({pictures, setPictures}){
 
 
     }
-        <BottomSheet
-            isVisible={isVisible}
-            containerStyle={{ backgroundColor: 'rgba(0.5, 0.25, 0, 0.2)' }}
-        ></BottomSheet>
+       
     useEffect(() => {
         (async () => {
             const { status } = await MediaLibrary.requestPermissionsAsync(true)
@@ -100,7 +97,7 @@ export default function List ({pictures, setPictures}){
                          }} >
                     <Text>Nuage</Text>
                     </TouchableOpacity >
-                   
+                 
                     <TouchableOpacity
                         onPress={() => {
                             trashPicture(item.uri);
