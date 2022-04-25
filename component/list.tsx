@@ -27,6 +27,25 @@ export default function List ({pictures, setPictures}){
 
     const saveInPhone = (uri:string)=>{
         MediaLibrary.saveToLibraryAsync(uri)
+        Alert.alert(
+            "Super titre",
+            "Votre photo à était enregistrer (please ajoute moi des points fred !)",
+            [
+              {
+                text: "Cancel",
+                onPress: () => Alert.alert("Annulation"),
+                style: "cancel",
+              },
+     
+            ],
+            {
+              cancelable: true,
+              onDismiss: () =>
+                Alert.alert(
+                  "This alert was dismissed by tapping outside of the alert dialog."
+                ),
+            }
+          );
     }
   
     const trashPicture = (uri:string) => {
@@ -90,7 +109,6 @@ export default function List ({pictures, setPictures}){
             <ScrollView>
                 <View>
                 <View style={styles.cameraSnap}>
-                    
                     <TouchableOpacity
                         onPress={() => {
                             saveInPhone(item.uri);
