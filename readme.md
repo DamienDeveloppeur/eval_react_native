@@ -12,4 +12,4 @@ Je tiens à m'excuser pour la faiblesse du design, je suis un back et c'est mon 
 3) en appuyant sur poubelle, une pop-up nous demande une confirmation pour la supression de la photo
 
 Il manque les icones nuages et poubelle, je n'ai pas eu le temps.
-Il manque aussi 
+Il manque aussi le conditionnement de l'affichage du nuage 
