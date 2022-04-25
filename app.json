@@ -1,5 +1,15 @@
 {
   "expo": {
+    "plugins": [
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Allow appli_eval to access your photos.",
+          "savePhotosPermission": "Allow appli_eval to save photos.",
+          "isAccessMediaLocationEnabled": true
+        }
+      ]
+    ],
     "name": "react_eval",
     "slug": "react_eval",
     "version": "1.0.0",
