@@ -160,7 +160,4 @@ const styles = StyleSheet.create({
         width:80,
         backgroundColor:"rgba(255,255,255,0.5)",
     },
-    positionCloud: {
-        position:"absolute",
-    }
   });
