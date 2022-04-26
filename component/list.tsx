@@ -8,6 +8,7 @@ import * as MediaLibrary from 'expo-media-library';
 import React from "react";
 import { BottomSheet} from 'react-native-elements';
 import { Button } from '@rneui/base';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 export default function List ({pictures, setPictures}){
     const STORAGE=useFetchStore();
@@ -113,14 +114,14 @@ export default function List ({pictures, setPictures}){
                         onPress={() => {
                             saveInPhone(item.uri);
                          }} >
-                    <Text>Nuage</Text>
+                    <Icon name="cloud" size={30} color="#4F8EF7" />
                     </TouchableOpacity >
                  
                     <TouchableOpacity
                         onPress={() => {
                             trashPicture(item.uri);
                          }} >
-                    <Text>Poubelle</Text>
+                    <Icon name="trash" size={30} color="#4F8EF7" />
                     </TouchableOpacity >
                 </View>
                     <Image
@@ -153,36 +154,13 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         flexDirection: 'row',
     },
-    test : {
-        display:'flex',
-    },
-    cameraContainer:{
-        flex:1,
-        marginTop:0,
-        position:"relative",
-        width:"100%",
-        height:"50%",
-        flexDirection:"row",
-        justifyContent:"center",
-        alignItems:"flex-end"
-    },
-    cameraSubContainer:{
-        width:"100%",
-        flexDirection:"row",
-        justifyContent:"center",
-        alignItems:"center",
-        backgroundColor:"transparent",
-        marginBottom:50
-    },
-    cameraButton:{
-        backgroundColor:"rgba(255,255,255,0.1)",
-        fontSize:24,
-        color:"white"
-    },
     cameraSnap:{
         borderRadius:60,
         height:80,
         width:80,
         backgroundColor:"rgba(255,255,255,0.5)",
     },
+    positionCloud: {
+        position:"absolute",
+    }
   });
